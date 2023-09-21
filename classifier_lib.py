@@ -28,7 +28,7 @@ def load_classifier(ckpt_path, img_resolution, device, eval=True):
     classifier = create_classifier(**classifier_args)
     classifier.to(device)
     if ckpt_path is not None:
-        ckpt_path = os.getcwd() + ckpt_path
+        ckpt_path = ckpt_path
         classifier_state = torch.load(ckpt_path, map_location="cpu")
         classifier.load_state_dict(classifier_state)
     if eval:
@@ -52,7 +52,7 @@ def load_discriminator(ckpt_path, device, condition, eval=False, channel=512):
     discriminator = create_classifier(**discriminator_args)
     discriminator.to(device)
     if ckpt_path is not None:
-        ckpt_path = os.getcwd() + ckpt_path
+        ckpt_path = ckpt_path
         discriminator_state = torch.load(ckpt_path, map_location="cpu")
         discriminator.load_state_dict(discriminator_state)
     if eval:
