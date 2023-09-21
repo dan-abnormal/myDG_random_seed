@@ -75,8 +75,8 @@ def calculate_fid_from_inception_stats(mu, sigma, mu_ref, sigma_ref):
 
 def main(image_path, ref_path, num_samples, device):
     """Calculate FID for a given set of images."""
-    image_path = os.getcwd() + image_path
-    ref_path = os.getcwd() + ref_path
+    image_path = image_path
+    ref_path = ref_path
 
 
     print(f'Loading dataset reference statistics from "{ref_path}"...')
